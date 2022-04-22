@@ -1,0 +1,14 @@
+[
+    {
+        "caption": "ImagePaste: Paste Image From Clipboard",
+        "command": "image_paste"
+    },
+    {
+        "caption": "Preferences: ImagePaste Settings",
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/ImagePaste/imagepaste.sublime-settings",
+            "default": "// Settings in here override those in \"Default/Preferences.sublime-settings\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
+        }
+    },
+]

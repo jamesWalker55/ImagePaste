@@ -1,0 +1,6 @@
+[
+    { 
+        "keys": ["super+v"], 
+        "command": "image_paste",
+    },
+]

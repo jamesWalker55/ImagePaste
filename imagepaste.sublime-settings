@@ -1,0 +1,54 @@
+{
+    // Certain settings support Sublime Text's variable expansion. Some
+    // additional variables are also provided: $date, $datetime
+
+    // Image Output Settings
+    //
+    // These settings control where the image file will be created.
+
+    // the output folder for the pasted image
+    "image_dir_name": "images",
+
+    // the prefix to be added to the pasted image
+    "image_prefix": "$file_base_name",
+
+    // Fallback Command Settings
+    //
+    // If no image is in the clipboard, a fallback command will be called
+    // instead. These settings let you customise the fallback command to
+    // be called.
+
+    // The type of command to be executed.
+    // Must be one of: text, window, application
+    "fallback_command_type": "text",
+
+    // The fallback command to execute.
+    //
+    // You can also provide a map that follows Sublime Text's command syntax:
+    //
+    //     "fallback_command": {
+    //         "command": "paste",
+    //         "args": {},
+    //     },
+    //
+    "fallback_command": "paste",
+
+    // Link Insertion Settings
+    //
+    // These settings control how the image path is inserted into the document
+
+    // Change whether the output path is relative to the currently open file,
+    // or the first open folder in the sidebar.
+    //
+    // Must be one of: file, first_open_folder
+    "inserted_path_relative_to": "file",
+
+    // The templates used when pasting the link into the document.
+    // The only supported variable is $path
+    "insert_format": [
+        {
+            "scope": "text.html.markdown",
+            "template": "![]($path)",
+        },
+    ]
+}
