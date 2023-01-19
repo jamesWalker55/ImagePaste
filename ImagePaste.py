@@ -197,6 +197,16 @@ class ImagePasteCommand(sublime_plugin.TextCommand):
             abs_path, rel_path = generate_image_path(self.view)
 
             print(f"Saving image to: {abs_path}, {rel_path}")
+
+            if not abs_path.parent.exists():
+                rv = sublime.yes_no_cancel_dialog(
+                    f"Folder doesn't exist: {rel_path.parent}\nCreate the folder and contnue?"
+                )
+                if rv != 1:  # rv != YES
+                    return
+
+                abs_path.parent.mkdir(parents=True)
+
             image.save(abs_path, "PNG")
 
             insert_formats = get_insert_formats()
