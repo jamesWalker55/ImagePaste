@@ -185,6 +185,11 @@ class ImagePasteCommand(sublime_plugin.TextCommand):
 
         image = ImageGrab.grabclipboard()
 
+        if isinstance(image, list):
+            msg = "Please paste your image into an image editor then copy it from there!\nCan't paste this image - this is a PIL bug and can't be fixed with this plugin."
+            sublime.error_message(msg)
+            return
+
         if image is None:
             print("No valid image in clipboard.")
             run_fallback_command(view)
