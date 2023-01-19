@@ -171,12 +171,6 @@ def get_insert_formats():
 
 class ImagePasteCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        # print(f"Image path: {generate_image_path(self.view)}")
-        # print(f"Fallback command: {get_fallback_command()}")
-        # print(f"Insert formats: {get_insert_formats()}")
-        # print(f"Clipboard image: {ImageGrab.grabclipboard()}")
-        # print("\n\n")
-
         # self.view is automatically provided by Sublime Text
         view = self.view
 
