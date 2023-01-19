@@ -141,6 +141,14 @@ def generate_image_path(view):
         dest_rel_path = os.path.relpath(dest_path, variables["folder"])
     elif relative_to == "file":
         dest_rel_path = os.path.relpath(dest_path, current_file.parent)
+    else:
+        sublime.error_message(
+            f"Invalid configuration: {relative_to.__repr__()}\n"
+            "'inserted_path_relative_to' must be either 'file' or 'first_open_folder'."
+        )
+        raise ValueError(f"Invalid value: {relative_to.__repr__()}")
+
+    dest_rel_path = Path(dest_rel_path)
 
     return dest_path, dest_rel_path
 
