@@ -222,3 +222,5 @@ class ImagePasteCommand(sublime_plugin.TextCommand):
                         break
                 else:
                     view.insert(edit, pos, rel_path)
+
+            image.close()
